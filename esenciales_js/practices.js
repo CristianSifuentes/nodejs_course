@@ -20,8 +20,3 @@ o.Saludar("Hola mundo", function() {
     console.log("callback ejecutado");
 })
 o.Saludar("hey...", 5)
-/*Objeto.prototype.Despedirse = function() {
-    console.log("Adios");
-}
-o.Despedirse()
-*/
