@@ -17,5 +17,18 @@ var suma2 = function(a) {
        return a + b;
    }
 };
+var sumar10 = suma2(10);
+var sumar11 = suma(11);
 
-console.log(suma(2, 2), suma2(2)(3));
+var f = function(callback){
+    //ejecución de una secuencia
+    if(typeof callback == 'function')
+    {
+        return callback()
+    }
+}
+
+// 3.- En programación funciona siempre se debe regresar un resultado único
+
+
+console.log(suma(2, 2), sumar10(7));
