@@ -1,7 +1,7 @@
 
 const fs = require('fs');
 
-const readable = fs.createReadStream("./texto.txt");
+const readable = fs.createReadStream("./anotaciones.txt");
 
 // Fragmento de documentación oficial de API de Node.js (Stream)
 readable.on('data', (chunk) => {
