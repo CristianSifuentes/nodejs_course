@@ -5,4 +5,4 @@ const fs = require('fs');
 
 archivo = fs.readFileSync('./texto.txt');
 
-console.log(archivo);
+console.log(archivo.toString());
