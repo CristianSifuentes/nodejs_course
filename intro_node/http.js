@@ -1,12 +1,12 @@
-var http = require('http');
+var https = require('https');
 
 var opciones = {
-    port:80, 
+    port:443, 
     hostname: "google.com",
     method: "get",
-    path: "http//google.com"
+    path: "https://www.google.com.mx/"
 }
-var req = http.request(opciones, (respuesta) => {
+var req = https.request(opciones, (respuesta) => {
   // la 'respuesta' es un CANAL de Lectura
   respuesta.on('data', (chunk) => {
      console.log(chunk.toString());
