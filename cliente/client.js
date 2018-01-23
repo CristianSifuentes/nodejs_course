@@ -8,6 +8,12 @@ class Cliente {
      this.protocolo = protocolo;
    }
 
+
+    //procesar HEADERS para mantener sesion
+    procesarHeaders(req){
+     return req;
+    }
+     
     //Realizar peticiones HTTP para obtener información
     get(uri){
 
