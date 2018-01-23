@@ -15,12 +15,22 @@ class Cliente {
     }
      
     //Realizar peticiones HTTP para obtener información
-    get(uri){
+    get(uri, callback){
+        var opciones = {
+          hostname: this.host,
+          prot: this.puerto,
+          method: 'GET',
+          path: this.protocolo + "://"+ this.host + uri
+        }
+    }
+
+    //Realizar peticiones HTTP para enviar información 
+    post(uri, data){
 
     }
 
-    //REalizar peticiones HTTP para enviar información 
-    post(uri, data){
+    //Manejo de peticiones
+    request(opciones, callback){
 
     }
 }
