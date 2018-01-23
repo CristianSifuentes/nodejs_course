@@ -7,7 +7,7 @@ class Cliente {
      this.puerto = puerto;
      this.protocolo = protocolo;
      if(protocolo != "http" && protocolo != "https"){
-       console.log("ERROR!!!")
+       console.log("ERROR!!!");
      }
    }
 
@@ -41,6 +41,27 @@ class Cliente {
     //Manejo de peticiones
     request(opciones, callback){
         //Si va ha hacer http o https
+        var http = require(this.protocolo);//http p https
+        var respuesta = {
+          status: null,
+          body: "",
+          headers: null
+        }
+
+        var peticion = http.request(opciones, (canalRespuesta) => {
+          canalRespuesta.on('data', (chunk) =>{
+            respuesta.body += chunk;
+          });
+
+          canalRespuesta.on('end', () =>{
+              respuesta.status = canalRespuesta.statusCode;
+              respuesta.headers = canalRespuesta.headers;
+              callback(respuesta);
+         });
+          
+
+        });
+        peticion.end();
     }
 }
 
