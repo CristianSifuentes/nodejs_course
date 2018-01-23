@@ -2,6 +2,12 @@
 //github.com
 class Cliente {
   
+   constructor(host, puerto, protocolo){
+     this.host = host;
+     this.puerto = puerto;
+     this.protocolo = protocolo;
+   }
+
     //Realizar peticiones HTTP para obtener información
     get(uri){
 
