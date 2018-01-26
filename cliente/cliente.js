@@ -12,12 +12,22 @@ class Cliente {
    }
 
 
+    //metodo de autenticación
+    autenticarBasic(user, pass){
+       this.basicAuth = new Buffer(user + ":" + pass).toString("base64");
+        
+    
+      }
+
     //procesar HEADERS para mantener sesion
     procesarHeaders(){
       var headers = {
         "Accept": "*/*",
         "User-Agent": "Cliente Node.js"
       };
+      if(this.basicAuth != undefined){
+        headers.Authorization = "Basi c" + this.basicAuth;
+      }
      return headers;
     }
      
